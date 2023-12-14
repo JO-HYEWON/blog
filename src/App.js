@@ -10,11 +10,6 @@ function App() {
 // 데이터바인딩은 {}
 // style 넣을 땐 style={{스타일명 : '값'}}
 
-
-
-// 최초 커밋용
-
-
 let post = '강남 우동 맛집';
 
   return (
