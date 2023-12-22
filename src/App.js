@@ -56,9 +56,36 @@ return (
             글제목변경(copy.sort());
           }}>가나다순정렬</button>
       </div>
+
+      <Modal/>
+      <Test/>
     </div>
   );
 }
 
+// 컴포넌트라고 부름, 첫글자 대문자 쓰자
+/**
+ * 컴포넌트를 만들어 쓰면 좋은 경우
+ * 1. 반복적인 html
+ * 2. 큰 페이지들
+ * 3. 자주 변경되는 것들
+ */
+function Modal(){
+  return (
+      <div className='modal'>
+        <h4>제목</h4>
+        <p>날짜</p>
+        <p>상세내용</p>
+      </div>
+  )
+}
+
+const Test = () => {
+  return (
+  <div>
+    <h5>테스트다용</h5>
+  </div>
+  )
+}
 
 export default App;
