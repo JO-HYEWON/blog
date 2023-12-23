@@ -27,6 +27,7 @@ let[날짜, d] = useState('2월 17일 발행');
 // <div></div> 를 쓰고 그 다음 또 <div></div> 쓰면 안되고 1개만 써야함
 
 let [따봉, 따봉변경] = useState(0);
+let [modal, setModal] = useState(false);
 
 return (
     <div className="App">
@@ -42,8 +43,10 @@ return (
         <p>{날짜}</p>
       </div>
       <div className='list'>
-        <h4>{글제목[2]}</h4>
-        <p>{날짜}</p>
+        <h4 onClick={() => {
+            modal == false ? setModal(true) : setModal(false)
+        }}>{글제목[2]}</h4>
+        <p>{날짜}</p>f 
       </div>
       <div>
         <button onClick={() => {
@@ -57,7 +60,10 @@ return (
           }}>가나다순정렬</button>
       </div>
 
-      <Modal/>
+      {
+        modal == true ? <Modal></Modal> : null
+      }
+
       <Test/>
     </div>
   );
