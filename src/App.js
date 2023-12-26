@@ -29,12 +29,14 @@ let[날짜, d] = useState('2월 17일 발행');
 let [따봉, 따봉변경] = useState(0);
 let [modal, setModal] = useState(false);
 
+
+
 return (
     <div className="App">
       <div className="black-nav">
         <h4 style={{color : 'red', fontSize : '16px'}}>블로그임</h4>
       </div>
-      <div className='list'>
+      {/* <div className='list'>
         <h4>{글제목[0] } <span onClick={ () => { 따봉변경(따봉+1) } }>👍</span> {따봉} </h4>
         <p>{날짜}</p>
       </div>
@@ -47,7 +49,7 @@ return (
             modal == false ? setModal(true) : setModal(false)
         }}>{글제목[2]}</h4>
         <p>{날짜}</p>f 
-      </div>
+      </div> */}
       <div>
         <button onClick={() => {
           let copy = [...글제목];
@@ -62,6 +64,18 @@ return (
 
       {
         modal == true ? <Modal></Modal> : null
+      }
+
+
+      { // 첫번째 a는 배열, i는 반복문이 돌 때마다 0부터 1씩 증가하는 정수, 파라미터 2개까지 가능
+        글제목.map(function(a, i){
+          return (<div className='list' key={i}>
+          {/* <h4>{ a }</h4> */}
+          {/* <h4>{ 글제목[i] }</h4> */}
+          <h4>{글제목[i] } <span onClick={ () => { 따봉변경(따봉+1) } }>👍</span> {따봉} </h4>
+          <p>{날짜}</p>
+        </div>)
+        })
       }
 
       <Test/>
